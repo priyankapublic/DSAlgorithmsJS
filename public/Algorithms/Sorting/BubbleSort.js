@@ -14,13 +14,5 @@ let bubbleSort = inputArr => {
   } while (swapped);
   return inputArr;
 };
-document.getElementById("BubbleSort").innerHTML = bubbleSort([
-  4,
-  6,
-  1,
-  3,
-  11,
-  0,
-  -2,
-  2
-]);
+document.getElementById("BubbleSort").innerHTML =
+  "Sorted" + bubbleSort([4, 6, 1, 3, 11, 0, -2, 2]);
