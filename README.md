@@ -9,3 +9,7 @@ https://dsa-lgorithms-js-kv6gvsuaw.now.sh/
 # Issue reporting can be done via mail on
 
 <b>sweeti270789@gmail.com</b>
+
+#Author
+Priyanka Kesharwani
+copyright: 2020
