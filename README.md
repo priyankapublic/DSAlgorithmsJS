@@ -5,6 +5,7 @@
 # Versel Server with running code
 https://cq74f.csb.app/
 
-# Issue reporting can be done via mail on sweeti270789@gmail.com
+# Issue reporting can be done via mail on 
+<b>sweeti270789@gmail.com</b>
 
 
