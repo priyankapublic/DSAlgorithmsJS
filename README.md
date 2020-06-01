@@ -10,6 +10,7 @@ https://dsa-lgorithms-js-kv6gvsuaw.now.sh/
 
 <b>sweeti270789@gmail.com</b>
 
-#Author
+# Author
+
 Priyanka Kesharwani
-copyright: 2020
+&copy; 2020
