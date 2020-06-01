@@ -15,4 +15,6 @@ let bubbleSort = inputArr => {
   return inputArr;
 };
 document.getElementById("BubbleSort").innerHTML =
-  "Sorted" + bubbleSort([4, 6, 1, 3, 11, 0, -2, 2]);
+  "Sorted" + bubbleSort([1, 2, 3, 4]);
+//Complexity Worst & Avergae O(n^2)
+//Best O(n)
