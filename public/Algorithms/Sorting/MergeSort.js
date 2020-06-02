@@ -39,5 +39,16 @@ function merge(left, right) {
     .concat(right.slice(rightIndex));
 }
 
-document.getElementById("MergeSort").innerHTML =
-  "Sorted" + mergeSort([1, 2, 3, 4, 3, 1, 7, 7, 2, 11, 6]);
+document.getElementById("MergeSort").innerHTML = mergeSort([
+  1,
+  2,
+  3,
+  4,
+  3,
+  1,
+  7,
+  7,
+  2,
+  11,
+  6
+]);
