@@ -1,4 +1,4 @@
-let bubbleSort = inputArr => {
+let bubbleSort = (inputArr) => {
   let len = inputArr.length;
   let swapped;
   do {
