@@ -21,45 +21,38 @@ function validAnagrams(str1, str2) {
       return `${str1}, ${str2} :` + false;
     }
   }
+
   return `${str1}, ${str2} :` + true;
 }
 
 function validAnagrams2(str1, str2) {
-  const chars1 = str1.split("");
-  const chars2 = str2.split("");
   const f1 = {};
 
   if (str1.length !== str2.length) {
     return `${str1}, ${str2} :` + false;
   }
 
-  for (let i in chars1) {
-    f1[chars1[i]] = (f1[chars1[i]] || 0) + 1;
+  for (let i = 0; i < str1.length; i++) {
+    f1[str1[i]] = (f1[str1[i]] || 0) + 1;
   }
 
-  for (let j in chars2) {
-    if (!f1[chars2[j]]) {
+  for (let j = 0; j < str2.length; j++) {
+    if (!f1[str2[j]]) {
       return `${str1}, ${str2} :` + false;
     } else {
-      f1[chars2[j]]--;
+      f1[str2[j]]--;
     }
   }
   return `${str1}, ${str2} :` + true;
 }
-console.log(validAnagrams2("", ""));
-console.log(validAnagrams("", ""));
+const t1 = performance.now();
 
-console.log(validAnagrams2("iceman", "cinema"));
-console.log(validAnagrams("iceman", "cinema"));
+console.log(validAnagrams2("aabbccddee", "eeddccbbaa"));
+const t2 = performance.now();
+console.log(t2 - t1);
 
-console.log(validAnagrams2("rat", "tar"));
-console.log(validAnagrams("rat", "tar"));
+const t3 = performance.now();
 
-console.log(validAnagrams2("zszaaabb", "bbzszaaa"));
-console.log(validAnagrams("zszaaabb", "bbzszaaa"));
-
-console.log(validAnagrams2("car", "atr"));
-console.log(validAnagrams("car", "atr"));
-
-console.log(validAnagrams2("car", "acr"));
-console.log(validAnagrams("car", "acr"));
+console.log(validAnagrams("aabbccddee", "eeddccbbaa"));
+const t4 = performance.now();
+console.log(t4 - t3);
