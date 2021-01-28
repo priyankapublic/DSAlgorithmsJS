@@ -36,3 +36,12 @@ console.log(countUnique([1, 2, 4, 5, 6, 7, 8, 8, 8]));
 
 console.log(countUnique([1, 2, 2, 2, 3, 4, 4, 4, 5, 5, 5]));
 console.log(countUnique([]));
+function power(number, exp) {
+  if (exp === 0) return 1;
+  exp--;
+  return number * power(number, exp);
+}
+
+console.log(power(2, 2));
+console.log(power(2, 3));
+console.log(power(2, 5));
