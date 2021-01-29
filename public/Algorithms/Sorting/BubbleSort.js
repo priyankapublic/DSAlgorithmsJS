@@ -14,6 +14,5 @@ let bubbleSort = (inputArr) => {
   } while (swapped);
   return inputArr;
 };
-document.getElementById("BubbleSort").innerHTML = bubbleSort([1, 2, 3, 4]);
 //Complexity Worst & Avergae O(n^2)
 //Best O(n)
