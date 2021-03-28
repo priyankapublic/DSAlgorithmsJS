@@ -1,4 +1,4 @@
-let insertionSort = inputArr => {
+let insertionSort = (inputArr) => {
   let len = inputArr.length;
   for (let i = 1; i < len; i++) {
     let j = i - 1;
@@ -11,13 +11,4 @@ let insertionSort = inputArr => {
   }
   return inputArr;
 };
-document.getElementById("InsertionSort").innerHTML = insertionSort([
-  4,
-  6,
-  1,
-  3,
-  11,
-  0,
-  -2,
-  2
-]);
+console.log("Insertion sort:", insertionSort([4, 6, 1, 3, 11, 0, -2, 2]));
