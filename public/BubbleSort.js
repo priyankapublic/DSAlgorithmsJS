@@ -16,3 +16,5 @@ let bubbleSort = (inputArr) => {
 };
 //Complexity Worst & Avergae O(n^2)
 //Best O(n)
+
+export default bubbleSort;

@@ -6,6 +6,7 @@ class Graph {
     if (!this.adjacencyList[vertex]) this.adjacencyList[vertex] = [];
   }
   addEdge(v1, v2) {
+    console.log(v1, v2);
     this.adjacencyList[v1].push(v2);
     this.adjacencyList[v2].push(v1);
   }
@@ -146,13 +147,78 @@ wg.addVertex("F");
 
 wg.addEdge("A", "B", 4);
 wg.addEdge("A", "C", 2);
-wg.addEdge("C", "D",2);
-wg.addEdge("C", "F",1);
-wg.addEdge("D", "E",3);
-wg.addEdge("D", "F",1);
+wg.addEdge("C", "D", 2);
+wg.addEdge("C", "F", 1);
+wg.addEdge("D", "E", 3);
+wg.addEdge("D", "F", 1);
 
-wg.addEdge("B", "E",3);
-wg.addEdge("E", "F",1);
-
+wg.addEdge("B", "E", 3);
+wg.addEdge("E", "F", 1);
 
 console.log(wg);
+
+function isCyclicUtil(v, visited, recStack, adj) {
+  console.log(visited, recStack);
+  if (visited[v] === false) {
+    // Mark the current node as visited and part of recursion stack
+    visited[v] = true;
+    recStack[v] = true;
+    if (adj[v]) {
+      adj[v].forEach((neighbor, index) => {
+        if (
+          !visited[neighbor] &&
+          isCyclicUtil(neighbor, visited, recStack, adj)
+        )
+          return true;
+        else if (recStack[neighbor]) return true;
+      });
+    }
+  }
+  recStack[v] = false; // remove the vertex from recursion stack
+  return false;
+}
+var V = 5;
+var adj = [[4], [2, 4], [3], [4]];
+var visited = [];
+var recStack = [];
+for (let i = 0; i < V; i++) {
+  visited[i] = false;
+  recStack[i] = false;
+}
+console.log(visited);
+
+for (let i = 0; i < adj.length; i++) {
+  if (isCyclicUtil(i, visited, recStack, adj)) console.log("YES");
+}
+
+function isPossible(prerequisites, n, p) {
+  var g = new Graph();
+
+  for (let i = 0; i < n; i++) {
+    g.addVertex(i);
+  }
+  for (let i = 0; i < p; i++) {
+    if (!g.adjacencyList[prerequisites[i][0]].length)
+      g.addEdge(prerequisites[i][0], prerequisites[i][1]);
+  }
+
+  var visited1 = [];
+  var recStack = [];
+  for (let i = 0; i < n; i++) {
+    visited1[i] = false;
+    recStack[i] = false;
+  }
+  console.log(visited1);
+  // Call the recursive helper function to detect cycle in different
+  // DFS trees
+  Object.keys(g.adjacencyList).forEach((i) => {
+    if (isCyclicUtil(i, visited1, recStack, g)) return "No";
+  });
+
+  return "Yes";
+}
+var arr = [
+  [1, 0],
+  [0, 1]
+];
+//console.log(isPossible(arr, 2, 2));

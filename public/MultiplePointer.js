@@ -107,4 +107,4 @@ function findLongestSubstring(str) {
   }
   return longest;
 }
-log("findLongestSubstring=" + findLongestSubstring("thisisawesome"));
+log("findLongestSubstring=" + findLongestSubstring("geeksforgeeks"));
