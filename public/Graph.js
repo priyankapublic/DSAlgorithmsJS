@@ -222,3 +222,61 @@ var arr = [
   [0, 1]
 ];
 //console.log(isPossible(arr, 2, 2));
+
+function orangesRotting(grid) {
+  var unittime = 2;
+
+  var changed = false;
+  while (true) {
+    for (let i = 0; i < grid.length; i++) {
+      let row = grid[i];
+      for (let j = 0; j < row.length; j++) {
+        //if (!visited[count])
+        if (grid[i][j] === unittime) {
+          var x = [-1, 1, 0, 0];
+          var y = [0, 0, -1, 1];
+
+          // visited[count] = true;
+          for (var k = 0; k < 4; k++) {
+            if (
+              i + x[k] >= 0 &&
+              j + y[k] >= 0 &&
+              i + x[k] < grid.length &&
+              j + y[k] < row.length
+            ) {
+              if (grid[i + x[k]][j + y[k]] === 1) {
+                grid[i + x[k]][j + y[k]] = grid[i][j] + 1;
+                changed = true;
+              }
+            }
+          }
+        }
+      }
+    }
+    if (!changed) break;
+    changed = false;
+    unittime++;
+  }
+
+  for (var i = 0; i < grid.length; i++) {
+    var row = grid[i];
+    for (var j = 0; j < row.length; j++) {
+      // if any orange is found to be
+      // not rotten then ans is not possible
+      if (grid[i][j] == 1) return -1;
+    }
+  }
+
+  // Because initial value for a rotten
+  // orange was 2
+  return unittime - 2;
+}
+
+console.log(
+  orangesRotting([
+    [0, 1, 2],
+    [0, 1, 2],
+    [2, 1, 1]
+  ])
+);
+console.log(orangesRotting([[2, 2, 0, 1]]));

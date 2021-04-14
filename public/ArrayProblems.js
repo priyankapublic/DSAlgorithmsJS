@@ -336,3 +336,38 @@ function minSwaps(arr) {
   return ans;
 }
 console.log("minSwaps:", minSwaps([7, 1, 14, 17, 6, 9, 5, 3, 18]));
+function hasArrayTwoCandidates(arr, n, x) {
+  var sortedArr = arr.sort((a, b) => (a > b ? 1 : -1));
+  console.log(sortedArr);
+  var l = 0;
+  var r = n - 1;
+
+  while (l < r) {
+    if (sortedArr[l] + sortedArr[r] === x) {
+      return true;
+    } else if (sortedArr[l] + sortedArr[r] > x) {
+      r--;
+    } else if (sortedArr[l] + sortedArr[r] < x) {
+      l++;
+    }
+  }
+  return false;
+}
+
+console.log("kkk:", hasArrayTwoCandidates([1, 5, 2, 6, 7], 5, 4));
+
+function printLargest(arr) {
+  var digs = [];
+  arr.forEach((number) => {
+    var strNumber = "" + number;
+    var digits = strNumber.split("");
+    digs.push(...digits);
+  });
+  digs = digs.map((a) => parseInt(a));
+  var sortedDigs = digs.sort((a, b) => {
+    return a > b ? -1 : 1;
+  });
+  return sortedDigs.join("");
+}
+
+console.log("printLargest:", printLargest([54, 546, 548, 60]));
