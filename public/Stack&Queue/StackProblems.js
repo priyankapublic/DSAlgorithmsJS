@@ -106,3 +106,4 @@ MyStack.prototype.getMin = function () {
   return min || -1;
 };
 main();
+document.write('</pre>');

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "JavaScript example starter project",
   "main": "public/index.html",
+  "type": "module",
   "scripts": {
     "start": "parcel ./public/index.html --open",
     "build": "parcel build ./public/index.html"
@@ -12,5 +13,8 @@
     "@babel/core": "7.2.0",
     "parcel-bundler": "^1.6.1"
   },
-  "keywords": ["javascript", "starter"]
+  "keywords": [
+    "javascript",
+    "starter"
+  ]
 }

@@ -1,4 +1,4 @@
-import bubbleSort from "./BubbleSort";
+import bubbleSort from "../Sorting/BubbleSort";
 
 function convertToWave(arr, n) {
   //console.log(arr)
@@ -10,8 +10,8 @@ function convertToWave(arr, n) {
   return arr;
 }
 
-console.log(
-  convertToWave([672, 2619, 2763, 3895, 4041, 4732, 5900, 8794, 9496])
+console.log("convertToWave([672, 2619, 2763, 3895, 4041, 4732, 5900, 8794, 9496]): "
+,  convertToWave([672, 2619, 2763, 3895, 4041, 4732, 5900, 8794, 9496])
 );
 
 function findMax(arr, n) {
@@ -27,7 +27,13 @@ function findMax(arr, n) {
   return max;
 }
 
-console.log(
+console.log( `findMax(
+[
+    { feet: 2, inches: 1 },
+    { feet: 1, inches: 2 }
+  ],
+  2
+): `,
   findMax(
     [
       { feet: 2, inches: 1 },
@@ -70,7 +76,7 @@ function sort012(arr, N) {
   }
   return arr;
 }
-console.log("sorted", sort012([0, 1, 2, 2, 0, 0], 6));
+console.log("sorted [0, 1, 2, 2, 0, 0]: ", sort012([0, 1, 2, 2, 0, 0], 6));
 
 function rotateByD(arr, d, n) {
   function gcd(a, b) {
@@ -101,7 +107,7 @@ function rotateByD(arr, d, n) {
   }
   return arr;
 }
-console.log(rotateByD([1, 2, 3, 4, 5], 2, 5));
+console.log('rotateByD([1, 2, 3, 4, 5], 2, 5): ', rotateByD([1, 2, 3, 4, 5], 2, 5));
 function kthSmallest(arr, l, r, k) {
   let min = arr[0];
   for (let j = 0; j < k; j++) {
@@ -112,13 +118,12 @@ function kthSmallest(arr, l, r, k) {
       }
     }
 
-    console.log(minJ);
     min = minJ;
   }
   return min;
 }
 
-console.log(kthSmallest([7, 10, 4, 20, 15], 5, 4, 3));
+console.log('kthSmallest([7, 10, 4, 20, 15], 5, 4, 3): ', kthSmallest([7, 10, 4, 20, 15], 5, 4, 3));
 
 function makeProductOne(arr, n) {
   var total = 0;
@@ -136,7 +141,6 @@ function makeProductOne(arr, n) {
     } else {
       minStep = e - 1;
       total += minStep;
-      console.log(minStep, total);
     }
   }
   if (neg % 2 === 0) {
@@ -150,7 +154,7 @@ function makeProductOne(arr, n) {
   }
   return total;
 }
-console.log("makeProductOne:", makeProductOne([1, 1], 2));
+console.log("makeProductOne([1, 1], 2): ", makeProductOne([1, 1], 2));
 
 function reArrange(arr, n) {
   function swap(arr, i, j) {
@@ -174,7 +178,7 @@ function reArrange(arr, n) {
   return count;
 }
 
-console.log(reArrange([9, 3, 8, 8], 4));
+console.log('reArrange([9, 3, 8, 8], 4): ',reArrange([9, 3, 8, 8], 4));
 
 function firstAndLast(arr, N, X) {
   let l = 0,
@@ -201,7 +205,7 @@ function firstAndLast(arr, N, X) {
   }
 }
 
-console.log(firstAndLast([0, 0, 1, 1, 2], 5, 1));
+console.log('firstAndLast([0, 0, 1, 1, 2], 5, 1)', firstAndLast([0, 0, 1, 1, 2], 5, 1));
 
 function increment(arr, n) {
   var carry = 0;
@@ -232,9 +236,7 @@ function increment(arr, n) {
   return array;
 }
 
-console.log("increment:", increment([1, 2, 3], 3));
-console.log("increment:", increment([6, 8, 9], 3));
-console.log("increment:", increment([9, 9, 9], 3));
+console.log("increment([1, 2, 3], 3:", increment([1, 2, 3], 3));
 
 function find3Numbers(A, n, X) {
   //Complexity Worst & Avergae O(n^2)
@@ -262,9 +264,8 @@ function find3Numbers(A, n, X) {
   return "Not found";
 }
 
-console.log("Triplets are:", find3Numbers([1, 4, 8, 16, 32, 2], 6, 19));
+console.log("Triplets are find3Numbers([1, 4, 8, 16, 32, 2], 6, 19): ", find3Numbers([1, 4, 8, 16, 32, 2], 6, 19));
 
-console.log("Triplets are:", find3Numbers([1, 4, 8, 16, 32, 2], 6, 29));
 
 function topK(a, k) {
   // code here
@@ -293,14 +294,13 @@ function topK(a, k) {
   //   return a.frequency > b.frequency ? -1 : 1;
   // });
 
-  console.log(arr);
   for (let i = 0; i < k; i++) {
     freq.push(arr[i].value);
   }
   return freq;
 }
 
-console.log("Topk:", topK([1, 1, 2, 2, 3, 3, 3, 4], 2));
+console.log("TopK([1, 1, 2, 2, 3, 3, 3, 4], 2) :", topK([1, 1, 2, 2, 3, 3, 3, 4], 2));
 
 function minSwaps(arr) {
   function swap(arr, i, j) {
@@ -311,7 +311,6 @@ function minSwaps(arr) {
   var ans = 0;
   var N = arr.length;
   var temp = [...arr];
-  console.log(temp);
   temp = bubbleSort(temp);
   var h = {};
   for (var i = 0; i < N; i++) {
@@ -335,10 +334,9 @@ function minSwaps(arr) {
   }
   return ans;
 }
-console.log("minSwaps:", minSwaps([7, 1, 14, 17, 6, 9, 5, 3, 18]));
+console.log("minSwaps([7, 1, 14, 17, 6, 9, 5, 3, 18]): ", minSwaps([7, 1, 14, 17, 6, 9, 5, 3, 18]));
 function hasArrayTwoCandidates(arr, n, x) {
   var sortedArr = arr.sort((a, b) => (a > b ? 1 : -1));
-  console.log(sortedArr);
   var l = 0;
   var r = n - 1;
 
@@ -354,7 +352,7 @@ function hasArrayTwoCandidates(arr, n, x) {
   return false;
 }
 
-console.log("kkk:", hasArrayTwoCandidates([1, 5, 2, 6, 7], 5, 4));
+console.log("hasArrayTwoCandidates([1, 5, 2, 6, 7], 5, 4): ", hasArrayTwoCandidates([1, 5, 2, 6, 7], 5, 4));
 
 function printLargest(arr) {
   var digs = [];
@@ -370,4 +368,4 @@ function printLargest(arr) {
   return sortedDigs.join("");
 }
 
-console.log("printLargest:", printLargest([54, 546, 548, 60]));
+console.log("printLargest([54, 546, 548, 60]): ", printLargest([54, 546, 548, 60]));

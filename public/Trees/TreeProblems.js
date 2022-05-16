@@ -1,4 +1,4 @@
-import bubbleSort from "./BubbleSort";
+import bubbleSort from "../Sorting/BubbleSort";
 
 function calculateHeight(node) {
   if (!node) return 0;
