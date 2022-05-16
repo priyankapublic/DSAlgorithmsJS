@@ -1,5 +1,5 @@
-function log(msg) {
-  console.log(msg);
+function log(msg, output) {
+  console.log(`${msg}`);
 }
 
 function sumZero(a) {
@@ -19,7 +19,7 @@ function sumZero(a) {
   return `No pair found`;
 }
 
-console.log(sumZero([-9, -3, -2, -1, 0, 1, 3, 5, 6, 7]));
+log('sumZero([-9, -3, -2, -1, 0, 1, 3, 5, 6, 7]):', sumZero([-9, -3, -2, -1, 0, 1, 3, 5, 6, 7]));
 
 function countUnique(a) {
   if (a.length === 0) {
@@ -36,10 +36,8 @@ function countUnique(a) {
   }
   return i + 1;
 }
-console.log(countUnique([1, 2, 4, 5, 6, 7, 8, 8, 8]));
+log('countUnique([1, 2, 4, 5, 6, 7, 8, 8, 8]): ', countUnique([1, 2, 4, 5, 6, 7, 8, 8, 8]));
 
-console.log(countUnique([1, 2, 2, 2, 3, 4, 4, 4, 5, 5, 5]));
-console.log(countUnique([]));
 
 //maxSubArray Solution
 function maxSubarraySum(arr, num) {
@@ -56,7 +54,7 @@ function maxSubarraySum(arr, num) {
   }
   return total;
 }
-log("maxSubarraySum=" + maxSubarraySum([1, 2, 3, 3, 7], 2));
+log("maxSubarraySum([1, 2, 3, 3, 7], 2): " + maxSubarraySum([1, 2, 3, 3, 7], 2));
 
 //minSubArrayLen Solution
 function minSubArrayLen(nums, sum) {
@@ -87,7 +85,7 @@ function minSubArrayLen(nums, sum) {
 
   return minLen === Infinity ? 0 : minLen;
 }
-log("minSubArrayLen=" + minSubArrayLen([1, 2, 3, 3, 7], 8));
+log("minSubArrayLen([1, 2, 3, 3, 7], 8): " + minSubArrayLen([1, 2, 3, 3, 7], 8));
 
 //findLongestSubstring Solution
 function findLongestSubstring(str) {
@@ -107,4 +105,4 @@ function findLongestSubstring(str) {
   }
   return longest;
 }
-log("findLongestSubstring=" + findLongestSubstring("geeksforgeeks"));
+log("findLongestSubstring in geeksforgeeks: " + findLongestSubstring("geeksforgeeks"));

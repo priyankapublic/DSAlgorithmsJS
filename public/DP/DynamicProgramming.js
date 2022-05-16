@@ -11,6 +11,7 @@ var climbStairs = function (n) {
   }
   return climb(n);
 };
+document.write('<pre>');
 console.log("climbStairs:", climbStairs(4));
 
 var coinchange2 = (arr, sum) => {

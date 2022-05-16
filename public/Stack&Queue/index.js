@@ -1,5 +1,5 @@
-import './PriorityQueue'
-import './StackProblems'
+import * as PQ  from './PriorityQueue'
+import * as SP  from './StackProblems'
 
 
 

@@ -39,16 +39,4 @@ function merge(left, right) {
     .concat(right.slice(rightIndex));
 }
 
-document.getElementById("MergeSort").innerHTML = mergeSort([
-  1,
-  2,
-  3,
-  4,
-  3,
-  1,
-  7,
-  7,
-  2,
-  11,
-  6
-]);
+console.log('mergeSort([1,2,3,4,3,2,1]): ', mergeSort([1,2,3,4,3,2,1]));
