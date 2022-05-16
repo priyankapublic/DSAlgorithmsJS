@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "JavaScript example starter project",
   "main": "public/index.html",
+  "type": "module",
   "scripts": {
     "start": "parcel ./public/index.html --open",
     "build": "parcel build ./public/index.html"

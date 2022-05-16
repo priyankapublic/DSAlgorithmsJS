@@ -13,7 +13,7 @@ let selectionSort = (a) => {
   return a;
 };
 
-document.getElementById("SelectionSort").innerHTML = selectionSort([
+console.log(selectionSort([
   1,
   2,
   3,
@@ -25,4 +25,4 @@ document.getElementById("SelectionSort").innerHTML = selectionSort([
   2,
   11,
   6
-]);
+]));
